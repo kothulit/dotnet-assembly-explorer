@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssemblyTest
+namespace AECore.Model
 {
     internal class Document
     {

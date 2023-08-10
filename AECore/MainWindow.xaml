@@ -8,6 +8,14 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Grid x:Name="grid">
-        <Button Margin="10" Click="Button_Click">Start</Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBlock Text="{Binding Name}"/>
+        </StackPanel>
+        <Button Margin="10" Click="Button_Click" Grid.Row="2">Start</Button>
     </Grid>
 </Window>

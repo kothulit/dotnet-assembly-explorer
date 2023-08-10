@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssemblyTest
+namespace AECore.Model
 {
     internal class Element
     {
         string FullName { get; }
-        string Name { get; }
+        public string Name { get; }
         string Namespace { get; }
         List<string> Methods { get; }
 
@@ -34,6 +34,16 @@ namespace AssemblyTest
             }
             str += "-----------------------------\n";
             return str;
+        }
+
+        public static Element GetExample()
+        {
+            return new Element("System.Example",
+                "Example", "System",
+                new List<string>() { "Compare", "Concat", "Copy", "ToUpper", "Trim",
+                    "Equals", "Format", "GetType", "IndexOf",
+                    "Insert", "Join", "LastIndexOf", "Remove",
+                    "Replace", "Split", "Substring", "ToLower"});
         }
     }
 }

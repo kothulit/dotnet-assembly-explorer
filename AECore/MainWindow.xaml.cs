@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AECore.ViewModel;
 using Autodesk.Revit.DB;
 
 namespace AECore
@@ -26,12 +27,18 @@ namespace AECore
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += OnLoaded;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             TestWindow testWin = new TestWindow();
             testWin.Show();
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            DataContext = new AECore.ViewModel.ElementViewModel();  
         }
 
         //adding visual panel for graphics in this window
