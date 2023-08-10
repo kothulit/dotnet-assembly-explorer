@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\App.xaml
-21785515563
+3-629749580
 
-9-524720164
+10-578508245
 14-656174734
-MainWindow.xaml;TestWindow.xaml;
+MainWindow.xaml;View\TestWindow.xaml;View\ExplorerWindow.xaml;
 
 False
 

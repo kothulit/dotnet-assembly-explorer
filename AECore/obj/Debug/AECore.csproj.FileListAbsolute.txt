@@ -102,12 +102,10 @@ C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\bin\Debug\DBManag
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\bin\Debug\RevitAPI.xml
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\AECore.csproj.AssemblyReference.cache
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\MainWindow.g.cs
-C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\TestWindow.g.cs
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\App.g.cs
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\AECore_MarkupCompile.cache
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\AECore_MarkupCompile.lref
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\MainWindow.baml
-C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\TestWindow.baml
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\AECore.g.resources
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\AECore.Properties.Resources.resources
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\AECore.csproj.GenerateResource.cache
@@ -115,3 +113,7 @@ C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\AECore.
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\AECore.csproj.CopyComplete
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\AECore.exe
 C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\AECore.pdb
+C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\View\TestWindow.g.cs
+C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\View\ExplorerWindow.g.cs
+C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\View\TestWindow.baml
+C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\View\ExplorerWindow.baml

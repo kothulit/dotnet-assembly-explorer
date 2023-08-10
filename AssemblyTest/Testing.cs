@@ -19,12 +19,12 @@ namespace AECore.Model
 
         public void Run()
         {
-            Document document = new Document(assemblyPath);
-            foreach (Element e in document.Elements)
-            {
-                Console.WriteLine(e);
-            }
-            Console.ReadKey();
+            //Document document = new Document(assemblyPath);
+            //foreach (Element e in document.Elements)
+            //{
+            //    Console.WriteLine(e);
+            //}
+            //Console.ReadKey();
         }
     }
 }
