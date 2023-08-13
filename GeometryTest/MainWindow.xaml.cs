@@ -25,44 +25,54 @@ namespace GeometryTest
         {
             InitializeComponent();
         }
-
-        //draw cyrcle by mouse click
-        private void Canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        
+        private DrawingVisual CreatDrawingVisualRectangle()
         {
-            Ellipse el = new Ellipse();
-            el.Width = 50;
-            el.Height = 50;
-            el.Fill = Brushes.Red;
-            el.Stroke = Brushes.Black;
-            el.StrokeThickness = 2;
-            el.Margin = new Thickness(e.GetPosition(canvas).X - 25, e.GetPosition(canvas).Y - 25, 0, 0);
-            canvas.Children.Add(el);
+            DrawingVisual drawingVisual = new DrawingVisual();
+            DrawingContext drawingContext = drawingVisual.RenderOpen();
+
+            Rect rect = new Rect(new Point(160, 100), new Size(320, 80));
+            drawingContext.DrawRectangle(Brushes.LightBlue, (Pen)null, rect);
+            drawingContext.Close();
+            return drawingVisual;
         }
 
-        //change canvas scale in the mouse point
-        private void Canvas_MouseWheel(object sender, MouseWheelEventArgs e)
+        public void RetrieveDrawing(Visual v)
         {
-            if (e.Delta > 0)
-            {
-                canvas.LayoutTransform = new ScaleTransform(canvas.LayoutTransform.Value.M11 * 1.1, canvas.LayoutTransform.Value.M22 * 1.1, e.GetPosition(canvas).X, e.GetPosition(canvas).Y);
-            }
-            else
-            {
-                canvas.LayoutTransform = new ScaleTransform(canvas.LayoutTransform.Value.M11 / 1.1, canvas.LayoutTransform.Value.M22 / 1.1, e.GetPosition(canvas).X, e.GetPosition(canvas).Y);
-            }
+            DrawingGroup drawingGroup = VisualTreeHelper.GetDrawing(v);
+            EnumDrawingGroup(drawingGroup);
         }
 
-        //change cyrcle position by mouse move
-        private void Canvas_MouseMove(object sender, MouseEventArgs e)
+        public void EnumDrawingGroup(DrawingGroup drawingGroup)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
+            DrawingCollection dc = drawingGroup.Children;
+            foreach (Drawing drawing in dc)
             {
-                Ellipse el = e.Source as Ellipse;
-                if (el != null)
+                if (drawing is DrawingGroup group)
                 {
-                    el.Margin = new Thickness(e.GetPosition(canvas).X - 25, e.GetPosition(canvas).Y - 25, 0, 0);
+                    EnumDrawingGroup(group);
+                }
+                else if (drawing is GeometryDrawing geometryDrawing)
+                {
+                    Geometry geometry1 = geometryDrawing.Geometry;
+                    if (geometry1 is RectangleGeometry rectangle)
+                    {
+                        Rect rect = rectangle.Rect;
+                        Console.WriteLine("Rectangle: {0},{1},{2},{3}", rect.Left, rect.Top, rect.Right, rect.Bottom);
+                    }
+                }
+                else if (drawing is ImageDrawing imageDrawing)
+                {
+
+                }
+                else if (drawing is GlyphRunDrawing glyphRunDrawing)
+                {
+                }
+                else if (drawing is VideoDrawing videoDrawing)
+                {
                 }
             }
+
         }
     }
 }
