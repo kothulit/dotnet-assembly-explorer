@@ -26,53 +26,40 @@ namespace GeometryTest
             InitializeComponent();
         }
         
-        private DrawingVisual CreatDrawingVisualRectangle()
+        //Создать объект класса Ellipse по нажатию кнопки мыши
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DrawingVisual drawingVisual = new DrawingVisual();
-            DrawingContext drawingContext = drawingVisual.RenderOpen();
-
-            Rect rect = new Rect(new Point(160, 100), new Size(320, 80));
-            drawingContext.DrawRectangle(Brushes.LightBlue, (Pen)null, rect);
-            drawingContext.Close();
-            return drawingVisual;
+            Ellipse ellipse = new Ellipse();
+            ellipse.Width = 50;
+            ellipse.Height = 50;
+            ellipse.Fill = Brushes.Red;
+            ellipse.Stroke = Brushes.Black;
+            ellipse.StrokeThickness = 1;
+            ellipse.Margin = new Thickness(e.GetPosition(this).X, e.GetPosition(this).Y, 0, 0);
+            canvas.Children.Add(ellipse);
         }
 
-        public void RetrieveDrawing(Visual v)
+        //Масштабировать геометрию в canvas колесиком мыши без ограничения
+        private void Window_MouseWheel(object sender, MouseWheelEventArgs e)
         {
-            DrawingGroup drawingGroup = VisualTreeHelper.GetDrawing(v);
-            EnumDrawingGroup(drawingGroup);
-        }
-
-        public void EnumDrawingGroup(DrawingGroup drawingGroup)
-        {
-            DrawingCollection dc = drawingGroup.Children;
-            foreach (Drawing drawing in dc)
+            if (e.Delta > 0)
             {
-                if (drawing is DrawingGroup group)
-                {
-                    EnumDrawingGroup(group);
-                }
-                else if (drawing is GeometryDrawing geometryDrawing)
-                {
-                    Geometry geometry1 = geometryDrawing.Geometry;
-                    if (geometry1 is RectangleGeometry rectangle)
-                    {
-                        Rect rect = rectangle.Rect;
-                        Console.WriteLine("Rectangle: {0},{1},{2},{3}", rect.Left, rect.Top, rect.Right, rect.Bottom);
-                    }
-                }
-                else if (drawing is ImageDrawing imageDrawing)
-                {
-
-                }
-                else if (drawing is GlyphRunDrawing glyphRunDrawing)
-                {
-                }
-                else if (drawing is VideoDrawing videoDrawing)
-                {
-                }
+                canvas.LayoutTransform = new ScaleTransform(canvas.LayoutTransform.Value.M11 + 0.1, canvas.LayoutTransform.Value.M22 + 0.1);
             }
+            else
+            {
+                canvas.LayoutTransform = new ScaleTransform(canvas.LayoutTransform.Value.M11 - 0.1, canvas.LayoutTransform.Value.M22 - 0.1);
+            }
+        }
 
+        //получить текущие параметры LayoutTransform из canvas
+        private void Window_MouseMove(object sender, MouseEventArgs e)
+        {
+            ScaleTransform scale = canvas.LayoutTransform as ScaleTransform;
+            if (scale != null)
+            {
+                scale.ScaleX = scale.ScaleY;
+            }
         }
     }
 }

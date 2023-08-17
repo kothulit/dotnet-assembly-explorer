@@ -5,9 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GeometryTest"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Canvas>
-        <Button>1</Button>
-        <Button>2</Button>
+        Title="MainWindow" Height="450" Width="800" MouseDown="Window_MouseDown" MouseWheel="Window_MouseWheel">
+    <Canvas x:Name="canvas">
     </Canvas>
 </Window>
