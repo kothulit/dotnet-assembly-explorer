@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\obj\Debug\
+C:\Users\thegr\source\repos\kothulit\dotnet-assembly-explorer\AECore\obj\Debug\
 AECore
 none
 false
 DEBUG;TRACE
-C:\Users\user\Documents\GitHub\dotnet-assembly-explorer\AECore\App.xaml
+C:\Users\thegr\source\repos\kothulit\dotnet-assembly-explorer\AECore\App.xaml
 3-629749580
 
-10-578508245
-14-656174734
+111343269876
+13-38814620
 MainWindow.xaml;View\TestWindow.xaml;View\ExplorerWindow.xaml;
 
-False
+True
 
